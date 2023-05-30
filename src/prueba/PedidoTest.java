@@ -2,8 +2,13 @@ package prueba;
 
 import static org.junit.Assert.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -112,6 +117,19 @@ public class PedidoTest {
 
         assertEquals(msj, pedido.generarTextoFacura());
 
+    }
+
+    @Test
+    public void testGuardarFactura() throws IOException, ProductoMayor150 {
+        
+        ProductoMenu productoMenu = new ProductoMenu("especial", 24000, 52);
+        pedido.setId(1);
+        pedido.agregarProducto(productoMenu);
+        File archivo = new File("./Data/" + this.pedido.getIdPedido() + ".txt");
+        pedido.guardarFactura(archivo);
+
+        File facturaGuardada = new File("./Data/" + this.pedido.getIdPedido() + ".txt");
+        assertTrue(facturaGuardada.exists());
     }
     
 }
