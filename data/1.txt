@@ -1,0 +1,13 @@
+Pedido #1
+Nombre: 0
+Dirección: 0
+
+PRODUCTOS
+1. Combo especial || $22320.0 || cal:7560
+2. Combo papas medianas || $5115.0 || cal:4560
+3. Combo gaseosa || $4650.0 || cal:1500
+
+IVA: $6096.15
+Total Neto: $32085.0
+Total Pedido: $38181.15
+Total calorias: 13620
